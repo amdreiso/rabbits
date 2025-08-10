@@ -1,0 +1,45 @@
+
+* {
+	--background-color: #080808;
+	--text-color: #eee;
+	--link-color: pink;
+	--logo-color: #ff3a49;
+	--logo-color-dim: #ff3a4980;
+	--navbar-color: #181818;
+	--progress-bar-color: aqua;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE10+/Edge */
+  user-select: none;         /* Standard */
+  -webkit-touch-callout: none; /* iOS Safari long-press menu */
+}
+
+.progress-container {
+	width: 300px;
+	height: 5px;
+	background: black; /* light gray */
+	border-radius: 5px;
+	overflow: hidden;
+	transition: .25s ease;
+}
+
+.progress-bar {
+	height: 100%;
+	width: 0%; /* initial value */
+	background: var(--progress-bar-color); /* purple */
+	border-radius: 5px;
+	transition: width 1.25s ease;
+}
+
+
+
+
+

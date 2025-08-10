@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<title>title</title>
+	</head>
+	<body>
+		<div class="app">
+			<div class="nav">
+				<div class="title">
+					<h1>rabbits🐇</h1>
+				</div>
+				<div class="nav-items">
+					<ul>
+						<li><a href="#daily" class="navbar-item-selected">Today</a></li>
+						<li><a href="#settings" class="">Consistency</a></li>
+						<li><a href="#settings" class="">Settings</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="page">
+				<div class="section" id="daily" style="display: block;">
+					<div id="habit-header">
+					</div>
+
+					<div class="label">
+						<span>undone</span>
+					</div>
+
+					<div id="habit-list-todo"></div>
+
+					<div class="label">
+						<span>done</span>
+					</div>
+
+					<div id="habit-list-done"></div>
+			</div>
+		</div>
+
+		<div id="actions" class="actions no-select">
+			<span>+</span>
+		</div>
+
+		<div id="actions-options" class="actions-options-inactive">
+			<button id="action-add-habit">add habit</button>
+		</div>
+
+		<div id="panel-add-habit" class="panel-add-habit-inactive">
+			<input id="panel-add-habit-title" type="text" placeholder="Habit title here...">
+
+			<div class="times-a-day">
+				<input type="number" id="panel-add-habit-times" name="num" min="1" max="100" step="1" value="1" />
+				<span>Times a day</span>
+			</div>
+
+			<div class="schedule">
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Mon</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Tue</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Wed</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Thu</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Fri</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Sat</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Sun</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">All</span>
+				</label>
+			</div>
+
+			<div class="confirmation-buttons">
+				<button id="add-habit-button">add</button>
+				<button id="cancel-habit-button">cancel</button>
+			</div>
+		</div>
+
+		<div id="panel-edit-habit" class="panel-edit-habit-inactive">
+			<input id="panel-edit-habit-title" type="text" placeholder="Habit title here...">
+
+			<div class="times-a-day">
+				<input type="number" id="panel-edit-habit-times" name="num" min="1" max="100" step="1" value="1" />
+				<span>Times a day</span>
+			</div>
+
+			<div class="schedule">
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Mon</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Tue</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Wed</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Thu</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Fri</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Sat</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">Sun</span>
+				</label>
+
+				<label class="schedule-checkbox">
+					<input type="checkbox" />
+					<span class="box">All</span>
+				</label>
+			</div>
+
+			<div class="confirmation-buttons">
+				<button id="edit-habit-button">set</button>
+				<button id="edit-cancel-habit-button">cancel</button>
+				<button id="edit-delete-habit-button">delete</button>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/habits.js"></script>
+		<script>
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener("click", function(e) {
+					const selected = "navbar-item-selected";
+					e.preventDefault();
+
+					// Hide all sections
+					document.querySelectorAll(".section").forEach(div => {
+						div.style.display = "none";
+					});
+
+					document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.classList.remove(selected);
+        	});
+
+					// Show the clicked section
+					const target = document.querySelector(this.getAttribute("href"));
+					if (target) target.style.display = "block";
+
+					this.classList.add(selected);
+				});
+			});
+
+			const actions = document.getElementById("actions");
+			const actionsOptions = document.getElementById("actions-options");
+			actions.onclick = () => {
+				actionsOptions.classList.toggle("actions-options-active");
+				actionsOptions.classList.toggle("actions-options-inactive");
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
